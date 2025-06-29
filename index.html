@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Front Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Georgia', serif;
+
+      /* Gantikan 'your-image.jpg' dengan gambar background awak */
+      background: url('ayam.jpg') no-repeat center center fixed; /* << GANTIKAN SINI */
+      background-size: cover;
+    }
+
+    /* =======================
+       NAVIGATION BAR
+       ======================= */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar .title {
+      color: white;
+      font-size: 24px;
+      font-family: Georgia, serif;
+    }
+
+    .navbar-links a {
+      margin-left: 20px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+      font-size: 16px;
+    }
+
+    .navbar-links a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* =======================
+       IMAGE BELOW NAVBAR LEFT
+       ======================= */
+    .side-image {
+      position: absolute;
+      top: 90px;   /* jarak dari navbar */
+      left: 80px;   /* jarak dari tepi kiri */
+      width: 500px; /* saiz gambar */
+      height: auto;
+    }
+    /* =======================
+       PARAGRAPH TENTANG GEPUK
+       ======================= */
+    .asal-usul {
+      position: absolute;
+      bottom: 100px; /* Adjust spacing from bottom */
+      left: 30%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      max-width: 600px; /* Optional: controls width of the text block */
+      font-family: 'Georgia', serif;
+   }
+
+    h1 {
+      font-size: 300%;
+      color: yellow;
+      text-shadow:
+       -0px -0px 10px #ff0000,
+        0px -0px 10px #ff0000,
+       -0px  0px 10px #ff0000,
+        0px  0px 10px #ff0000;
+    }
+
+    p {
+       font-size: 180%;
+       color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <div class="navbar">
+    <div class="title">Welcome to Ayam Gepuk Royale</div>
+    <div class="navbar-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+  
+  <div class="asal-usul">
+    <h1>Ayam Gepuk Royale</h1>
+    <p> Ayam Gepuk Royale ialah hidangan istimewa yang menggabungkan ayam yang diperap dengan rempah ratus terpilih lalu digoreng garing di luar dan lembut di dalam. Sambalnya dibuat daripada cili padi segar dan bahan-bahan tradisional yang memberi rasa pedas menyengat. Dihidang bersama nasi panas, kobis goreng, dan kicap menjadikannya satu hidangan lengkap yang memuaskan!</p>
+  </div>
+</body>
+</html>

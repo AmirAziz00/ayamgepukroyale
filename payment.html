@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+
+      /* Gantikan 'background.jpg' dengan nama gambar background awak */
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar .title {
+      color: white;
+      font-size: 24px;
+      font-family: Georgia, serif;
+    }
+
+    .navbar-links a {
+      margin-left: 20px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+      font-size: 16px;
+    }
+
+    .navbar-links a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* PAYMENT CONTAINER */
+    .payment-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+
+      /* Tengah di skrin */
+      margin: 100px auto; /* jarak dari atas selepas navbar */
+    }
+
+    .qr-image {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .upload-section {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Popup styling */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 25px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      display: none; /* hidden by default */
+      z-index: 1000;
+    }
+
+    .popup.show {
+      display: block;
+    }
+
+    .popup h3 {
+      margin: 0;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="title">Welcome to Ayam Gepuk Royale</div>
+    <div class="navbar-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- PAYMENT CONTAINER -->
+  <div class="payment-container">
+    <h2>Scan & Pay</h2>
+    <img src="qr.jpg" alt="QR Code" class="qr-image"><!-- Ganti 'qr.jpg' dengan QR code awak -->
+
+    <div class="upload-section">
+      <input type="file" id="receiptUpload" accept="image/*">
+    </div>
+
+    <button id="submitBtn" disabled>Submit</button>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" id="successPopup">
+    <h3>Successfully Submitted!</h3>
+  </div>
+
+  <script>
+    const receiptUpload = document.getElementById('receiptUpload');
+    const submitBtn = document.getElementById('submitBtn');
+    const popup = document.getElementById('successPopup');
+
+    receiptUpload.addEventListener('change', function () {
+      submitBtn.disabled = receiptUpload.files.length === 0;
+    });
+
+    submitBtn.addEventListener('click', function () {
+      popup.classList.add('show');
+
+      setTimeout(() => {
+        popup.classList.remove('show');
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

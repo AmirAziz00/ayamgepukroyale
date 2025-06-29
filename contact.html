@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Ayam Gepuk Royale</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff9f0;
+            background-image: url('cili.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .overlay {
+            background-color: rgba(255, 249, 240, 0.9);
+            min-height: 100vh;
+        }
+
+        /* NAVBAR (sama seperti sebelum ini) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar .title {
+            color: white;
+            font-size: 24px;
+            font-family: Georgia, serif;
+        }
+
+        .navbar-links a {
+            margin-left: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid white;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .navbar-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #e74c3c;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid #c0392b;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-form, .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #e74c3c;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #fffaf5;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e74c3c'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 20px;
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .info-item i {
+            margin-right: 15px;
+            color: #e74c3c;
+            font-size: 22px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .info-content h3 {
+            color: #e74c3c;
+            margin-bottom: 5px;
+        }
+
+        .hours-table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+
+        .hours-table tr:nth-child(even) {
+            background-color: #fffaf5;
+        }
+
+        .hours-table td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-table td:last-child {
+            font-weight: 600;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .navbar-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">Welcome to Ayam Gepuk Royale</div>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <header>
+            <div class="container">
+                <h1>Contact Ayam Gepuk</h1>
+                <p class="tagline">We're always hungry for your feedback!</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Ali bin Abu">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="ali@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required placeholder="Fikir apa tu..."></textarea>
+                        </div>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h3>Our Location</h3>
+                            <p>Kafe Kolej ZA'BA, UPSI 35900 TANJUNG MALIM, PERAK</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="info-content">
+                            <h3>Call Us</h3>
+                            <p>+60 10-277 8223</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-content">
+                            <h3>Email Us</h3>
+                            <p>ayamgepukroyalekz@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-content">
+                            <h3>Opening Hours</h3>
+                            <table class="hours-table">
+                                <tr>
+                                    <td>Every day</td>
+                                    <td>11am - 10pm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
